@@ -1,0 +1,19 @@
+<ul class="nav navbar-nav navbar-right">
+    <li><span class="glyphicon glyphicon-search"></span>
+      <input #searchBox id="search-box" (input)="search(searchBox.value)"/>
+    </li>
+    <!-- <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li> -->
+</ul>
+
+<div id="search-component">
+
+  <input #searchBox id="search-box" (input)="search(searchBox.value)" />
+
+  <ul class="search-result">
+    <li *ngFor="let hero of heroes$ | async" >
+      <a routerLink="/detail/{{hero.id}}">
+        {{hero.name}}
+      </a>
+    </li>
+  </ul>
+</div>

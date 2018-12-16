@@ -1,0 +1,104 @@
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+
+<h2>Mahasiswa</h2>
+
+<!-- <div class="form-group">
+  <label>
+    Nama Mahasiswa :
+  </label>
+
+  <input #heroName />
+
+
+  <label>
+    NIM :
+  </label>
+
+  <input #heroNIM />
+</div> -->
+
+<div class="ml-2 container-fluid">
+  <form>
+    <div class="form-row ml-3 mt-2" style="margin: auto;">
+      <div class="col-sm-2">
+        Nama Lengkap
+      </div>
+      <div class="col-sm-9">
+        <input type="text" class="form-control" name="nama[]" value="Nama Lengkap" readonly>
+      </div>
+    </div>
+    <div class="form-row ml-3 mt-2" style="margin: auto;">
+      <div class="col-sm-2">
+        Alamat
+      </div>
+      <div class="col-sm-9">
+        <input type="text" class="form-control" name="nama[]" value="Tempat Tinggal" readonly>
+      </div>
+    </div>
+    <div class="form-row ml-3 mt-2" style="margin: auto;">
+      <div class="col-sm-2">
+        Jenis Kelamin
+      </div>
+      <div class="radio">
+        <label>
+          <input type="radio" name="laki-laki" checked>Laki - laki</label>
+        <label>
+          <input type="radio" name="perempuan">Perempuan</label>
+      </div>
+    </div>
+    <div class="form-row ml-3 mt-2" style="margin: auto;">
+      <div class="col-sm-2">
+        Jurusan
+      </div>
+      <div class="col-sm-9">
+        <input type="text" class="form-control" name="nama[]" value="Jurusan" readonly>
+      </div>
+    </div>
+    <div class="form-row ml-3 mt-2" style="margin: auto;">
+      <div class="col-sm-2">
+        Program Studi
+      </div>
+      <div class="col-sm-9">
+        <input type="text" class="form-control" name="nama[]" value="Program Studi" readonly>
+      </div>
+    </div>
+    <div class="form-row ml-3 mt-2" style="margin: auto;">
+      <div class="col-sm-2">
+        Father
+      </div>
+      <div class="col-sm-9">
+        <input type="text" class="form-control" name="nama[]" value="Ayah" readonly>
+      </div>
+    </div>
+    <div class="form-row ml-3 mt-2" style="margin: auto;">
+      <div class="col-sm-2">
+        Mother
+      </div>
+      <div class="col-sm-9">
+        <input type="text" class="form-control" name="nama[]" value="Ibu" readonly>
+      </div>
+    </div>
+  </form>
+  <button type="button" class="p-3 mb-2 bg-primary text-white" (click)="add(heroName.value, heroNIM.value); 
+heroName.value=''">
+    add
+  </button>
+</div>
+
+
+
+
+<ul class="students">
+  <li *ngFor="let student of students">
+    <a routerLink="/detail/{{student.id}}">
+      <span class="badge">{{student.id}}</span> {{student.name}}
+    </a>
+    <button class="delete" title="delete student" (click)="delete(student)"> x </button>
+  </li>
+</ul>
