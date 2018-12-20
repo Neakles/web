@@ -18,7 +18,7 @@ const httpOptions = {
 };
 
 @Injectable({
-  providedIn: 'root' 
+  providedIn: 'root'
 })
 export class StudentService {
 
@@ -32,7 +32,7 @@ export class StudentService {
   //diatas adl dependency injection = inject service ke service yang lain
 
   /** GET students from the server */
-  getStudents() : Observable<Student[]> {
+  getStudents(): Observable<Student[]> {
     this.messageService.add('StudentService: fetched students');
 
     return this.http.get<Student[]>(this.studentsUrl)
@@ -87,42 +87,42 @@ export class StudentService {
       return of([]);
     }
     return this.http.get<Student[]>(`${this.studentsUrl}/?name=${term}`)
-    .pipe(
-      tap(_ => this.log(`found students matching "${term}"`)),
-      catchError(this.handleError<Student[]>('searchStudents', []))
-    );
+      .pipe(
+        tap(_ => this.log(`found students matching "${term}"`)),
+        catchError(this.handleError<Student[]>('searchStudents', []))
+      );
   }
 
   //////// Save methods //////////
 
-  /** POST: add a new hero to the server */
-  //name pada heroes TS diubah ke model Hero, agar bisa dipakek di sini
-  addStudent (student: Student): Observable<Student> {
+  /** POST: add a new student to the server */
+  //name pada students TS diubah ke model Student, agar bisa dipakek di sini
+  addStudent(student: Student): Observable<Student> {
     return this.http.post<Student>(this.studentsUrl, student, httpOptions)
-    .pipe(
-      tap(
-        (student: Student) => this.log(`added student w/ id=${student.id}`)
+      .pipe(
+        tap(
+          (student: Student) => this.log(`added student w/ id=${student.id}`)
         ),
-      catchError(this.handleError<Student>('addStudent'))
-    );
+        catchError(this.handleError<Student>('addStudent'))
+      );
   }
 
   /** DELETE: delete the hero from the server */
-  deleteStudent (student: Student | number): Observable<Student> {
+  deleteStudent(student: Student | number): Observable<Student> {
     //typeof untuk mengecek tipe data 
     const id = typeof student === 'number' ? student : student.id;
     const url = `${this.studentsUrl}/${id}`;
 
     return this.http.delete<Student>(url, httpOptions) //method delete API
-    .pipe(
-      tap(_ => this.log(`deleted student id=${id}`)), 
-      catchError(this.handleError<Student>('deleteStudent'))
-    );
+      .pipe(
+        tap(_ => this.log(`deleted student id=${id}`)),
+        catchError(this.handleError<Student>('deleteStudent'))
+      );
   }
 
   /** PUT: update the hero on the server */
   // update dipanggil di hero detail.ts
-  updateStudent (student: Student): Observable<any> {
+  updateStudent(student: Student): Observable<any> {
     return this.http.put(this.studentsUrl, student, httpOptions).pipe(
       tap(_ => this.log(`updated student id=${student.id}`)),
       catchError(this.handleError<any>('updateStudent'))
@@ -135,7 +135,7 @@ export class StudentService {
    * @param operation - name of the operation that failed
    * @param result - optional value to return as the observable result
    */
-  private handleError<T> (operation = 'operation', result?: T) {
+  private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
 
       // TODO: send the error to remote logging infrastructure

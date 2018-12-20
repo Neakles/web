@@ -4,9 +4,8 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
+<h3>Input Data Mahasiswa</h3>
 
-
-<h2>Mahasiswa</h2>
 
 <!-- <div class="form-group">
   <label>
@@ -21,84 +20,188 @@
   </label>
 
   <input #heroNIM />
-</div> -->
+</div>
+
+<button 
+(click)="add(heroName.value, heroNIM.value); 
+heroName.value=''">
+  add
+</button> -->
+
 
 <div class="ml-2 container-fluid">
   <form>
-    <div class="form-row ml-3 mt-2" style="margin: auto;">
-      <div class="col-sm-2">
+    <div class="form-row ml-3 mt-2">
+      <label class="col-sm-2" style="margin-top: 7px;">
         Nama Lengkap
-      </div>
+      </label>
       <div class="col-sm-9">
-        <input type="text" class="form-control" name="nama[]" value="Nama Lengkap" readonly>
+        <input type="text" class="form-control" #studentName>
       </div>
     </div>
-    <div class="form-row ml-3 mt-2" style="margin: auto;">
-      <div class="col-sm-2">
+    <div class="form-row ml-3 mt-2">
+      <label class="col-sm-2" style="margin-top: 7px;">
+        NIM
+      </label>
+      <div class="col-sm-9">
+        <input type="text" class="form-control" #studentNIM>
+      </div>
+    </div>
+    <div class="form-row ml-3 mt-2">
+      <label class="col-sm-2" style="margin-top: 7px;">
         Alamat
-      </div>
+      </label>
       <div class="col-sm-9">
-        <input type="text" class="form-control" name="nama[]" value="Tempat Tinggal" readonly>
+        <input type="text" class="form-control" #studentAlamat>
       </div>
     </div>
-    <div class="form-row ml-3 mt-2" style="margin: auto;">
-      <div class="col-sm-2">
-        Jenis Kelamin
+    <fieldset class="form-group">
+      <div class="form-row ml-3 mt-2">
+        <label class="col-sm-2" style="margin-top: 7px;">
+          Jenis Kelamin
+        </label>
+        <div class="col-sm-3">
+          <div class="form-check form-check-inline" style="margin-top: 7px;">
+            <input #studentJnsKel type="radio" id="l" value="l" style="padding: 10px 10px 5px;">
+            <label #studentJnsKel class="form-check-label">
+              Laki - laki
+            </label>
+          </div>
+          <div class="form-check form-check-inline" style="margin-top: 7px;">
+            <input #studentJnsKel type="radio" id="p" value="p" style="padding: 10px 10px 5px;">
+            <label #studentJnsKel class="form-check-label">
+              Perempuan
+            </label>
+          </div>
+        </div>
       </div>
-      <div class="radio">
-        <label>
-          <input type="radio" name="laki-laki" checked>Laki - laki</label>
-        <label>
-          <input type="radio" name="perempuan">Perempuan</label>
+    </fieldset>
+
+    <div class="form-row ml-3 mt-2">
+        <label class="col-sm-2" style="margin-top: 7px;">
+          Jurusan
+        </label>
+        <div class="col-sm-9">
+            <select class="custom-select custom-select-9" id="sel1">
+                <option>Teknik Mesin</option>
+                <option>Teknik Elektro</option>
+                <option>Teknik Kimia</option>
+                <option>Teknik Sipil</option>
+                <option>Akuntansi</option>
+                <option>Teknologi Informasi</option>
+                <option>Administrasi Niaga</option>
+              </select>
+        </div>
       </div>
-    </div>
-    <div class="form-row ml-3 mt-2" style="margin: auto;">
-      <div class="col-sm-2">
+
+
+    <!-- <div class="form-row ml-3 mt-2">
+      <label for="sel1" class="col-sm-2" style="margin-top: 7px;">
         Jurusan
-      </div>
-      <div class="col-sm-9">
-        <input type="text" class="form-control" name="nama[]" value="Jurusan" readonly>
-      </div>
-    </div>
-    <div class="form-row ml-3 mt-2" style="margin: auto;">
-      <div class="col-sm-2">
+      </label>
+          <div class="form-group">
+            <label for="sel1">Select list:</label>
+            <select class="custom-select custom-select-9" id="sel1">
+              <option>Teknik Mesin</option>
+              <option>Teknik Elektro</option>
+              <option>Teknik Kimia</option>
+              <option>Teknik Sipil</option>
+              <option>Akuntansi</option>
+              <option>Teknologi Informasi</option>
+              <option>Administrasi Niaga</option>
+            </select>
+          </div> -->
+    <div class="form-row ml-3 mt-2">
+      <label class="col-sm-2" style="margin-top: 7px;">
         Program Studi
-      </div>
+      </label>
       <div class="col-sm-9">
-        <input type="text" class="form-control" name="nama[]" value="Program Studi" readonly>
+        <input type="text" class="form-control" #studentProdi>
       </div>
     </div>
-    <div class="form-row ml-3 mt-2" style="margin: auto;">
-      <div class="col-sm-2">
+    <div class="form-row ml-3 mt-2">
+        <label class="col-sm-2" style="margin-top: 7px;">
+          IPK Terakhir
+        </label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" #studentProdi>
+        </div>
+      </div>
+    <div class="form-row ml-3 mt-2">
+      <label class="col-sm-2" style="margin-top: 7px;">
         Father
-      </div>
+      </label>
       <div class="col-sm-9">
-        <input type="text" class="form-control" name="nama[]" value="Ayah" readonly>
+        <input type="text" class="form-control" #studentFather>
       </div>
     </div>
-    <div class="form-row ml-3 mt-2" style="margin: auto;">
-      <div class="col-sm-2">
+    <div class="form-row ml-3 mt-2">
+      <label class="col-sm-2" style="margin-top: 7px;">
         Mother
-      </div>
+      </label>
       <div class="col-sm-9">
-        <input type="text" class="form-control" name="nama[]" value="Ibu" readonly>
+        <input type="text" class="form-control" #studentMother>
       </div>
     </div>
   </form>
-  <button type="button" class="p-3 mb-2 bg-primary text-white" (click)="add(heroName.value, heroNIM.value); 
-heroName.value=''">
-    add
-  </button>
+
+</div>
+<div class="col-sm-11 container-fluid" style="padding: 20px 25px 0px 10px;">
+  <div class="d-flex justify-content-end">
+    <div>
+      <button type="button" class="btn btn-primary text-white" (click)="add(
+                  studentName.value, 
+                  studentNIM.value, 
+                  studentAlamat.value,
+                  studentJurusan.value,
+                  studentProdi.value,
+                  studentFather.value,
+                  studentMother.value); 
+                  studentName.value='';
+                  studentNIM.value = '';
+                  studentAlamat.value = '';
+                  studentJurusan.value = '';
+                  studentProdi.value = '';
+                  studentFather.value = '';
+                  studentMother.value = ''">
+        add
+      </button>
+    </div>
+    <div style="padding: 0px 10px 0px 10px">
+      <button type="button" class="btn btn-default" (click)="
+      studentName.value = '';
+      studentNIM.value = '';
+      studentAlamat.value = '';
+      studentJurusan.value = '';
+      studentProdi.value = '';
+      studentFather.value = '';
+      studentMother.value = ''">
+        Cancel
+      </button>
+    </div>
+  </div>
 </div>
 
+<!-- <form [formGroup]="
+      form">
+      <label>
+        <input type="radio" value="Male" formControlName="gender">
+        <span>male</span>
+      </label>
+      <label>
+        <input type="radio" value="Female" formControlName="gender">
+        <span>female</span>
+      </label>
+      </form> -->
 
 
-
-<ul class="students">
-  <li *ngFor="let student of students">
-    <a routerLink="/detail/{{student.id}}">
-      <span class="badge">{{student.id}}</span> {{student.name}}
-    </a>
-    <button class="delete" title="delete student" (click)="delete(student)"> x </button>
-  </li>
-</ul>
+<div class="col-sm-11 container-fluid">
+  <ul class="students">
+    <li *ngFor="let student of students">
+      <a routerLink="/detail/{{student.id}}">
+        <span class="badge">{{student.id}}</span> {{student.name}}
+      </a>
+      <button class="delete" title="delete student" (click)="delete(student)"> x </button>
+    </li>
+  </ul>
+</div>

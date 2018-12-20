@@ -22,6 +22,7 @@ import { NavbarComponent }      from './navbar/navbar.component';
 import { StudentsComponent }    from './students/students.component';
 import { StudentDetailComponent } from './student-detail/student-detail.component';
 import { StudentSearchComponent } from './student-search/student-search.component';
+import { StudentFormComponent } from './student-form/student-form.component';
 
 @NgModule({
   
@@ -36,7 +37,8 @@ import { StudentSearchComponent } from './student-search/student-search.componen
     NavbarComponent,
     StudentsComponent,
     StudentDetailComponent,
-    StudentSearchComponent
+    StudentSearchComponent,
+    StudentFormComponent
   ],
   imports: [
     BrowserModule,

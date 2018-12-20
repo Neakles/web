@@ -2,7 +2,7 @@
   <h2>{{student.name | uppercase}} Details</h2>
 
 
-  <div></div>
+  
 
 
   <div class="card bg-light">
@@ -65,4 +65,73 @@
   <br />
   <button (click)="goBack()">go back</button>
   <button (click)="save()">save</button>
+</div>
+
+<div class="card bg-light">
+  <div class="card-body text-left">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nama</th>
+          <th scope="col">NIM</th>
+          <th scope="col">Alamat</th>
+          <th scope="col">Jenis Kelamin</th>
+          <th scope="col">Jurusan</th>
+          <th scope="col">Program Studi</th>
+          <th scope="col">IPK Terakhir</th>
+          <th scope="col">Father</th>
+          <th scope="col">Mother</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Mark</td>
+          <td>1731710033</td>
+          <td>Surabaya</td>
+          <td>Laki-laki</td>
+          <td>Teknologi Informasi</td>
+          <td>D3 Manajemen Informatika</td>
+          <td>3.3</td>
+          <td>Rizqi</td>
+          <td>Aulia</td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>Jacob</td>
+          <td>Thornton</td>
+          <td>@fat</td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td>Larry</td>
+          <td>the Bird</td>
+          <td>@twitter</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="container">
+  <form>
+    <div class="form-group row">
+      <label for="inputName" class="col-sm-1-12 col-form-label"></label>
+      <div class="col-sm-1-12">
+        <input type="text" class="form-control" name="inputName" id="inputName" placeholder="">
+      </div>
+    </div>
+    <fieldset class="form-group row">
+      <legend class="col-form-legend col-sm-1-12">Group name</legend>
+      <div class="col-sm-1-12">
+
+      </div>
+    </fieldset>
+    <div class="form-group row">
+      <div class="offset-sm-2 col-sm-10">
+        <button type="submit" class="btn btn-primary">Action</button>
+      </div>
+    </div>
+  </form>
 </div>

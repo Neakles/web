@@ -180,6 +180,78 @@ export class InMemoryDataService implements InMemoryDbService {
         jurusan: "teknologi informasi",
         prodi: "manajemen informatika",
         IPK: 3.82
+      },
+      {
+        id: 25,
+        name: 'Robert',
+        nim: 17317114,
+        jnsKelamin: 'L',
+        alamat: 'Amsterdam',
+        namaBapak: "Johannes",
+        namaIbu: "Ceith",
+        jurusan: "teknologi informasi",
+        prodi: "manajemen informatika",
+        IPK: 3.81
+      },
+      {
+        id: 26,
+        name: 'Kim',
+        nim: 17317115,
+        jnsKelamin: 'L',
+        alamat: 'Seoul',
+        namaBapak: "Park",
+        namaIbu: "So Hyun",
+        jurusan: "teknologi informasi",
+        prodi: "manajemen informatika",
+        IPK: 3.87
+      },
+      {
+        id: 27,
+        name: 'Alissa',
+        nim: 17317116,
+        jnsKelamin: 'P',
+        alamat: 'Amsterdam',
+        namaBapak: "Johannes",
+        namaIbu: "Ceith",
+        jurusan: "teknologi informasi",
+        prodi: "manajemen informatika",
+        IPK: 3.84
+      },
+      {
+        id: 28,
+        name: 'Nicholas',
+        nim: 17317117,
+        jnsKelamin: 'L',
+        alamat: 'Amsterdam',
+        namaBapak: "Thomy",
+        namaIbu: "Serena",
+        jurusan: "teknologi informasi",
+        prodi: "manajemen informatika",
+        IPK: 3.69
+      },
+      {
+        id: 29,
+        name: 'Jung',
+        nim: 17317118,
+        jnsKelamin: 'L',
+        alamat: 'Amsterdam',
+        namaBapak: "Kyuhyun",
+        namaIbu: "Mona",
+        jurusan: "teknologi informasi",
+        prodi: "manajemen informatika",
+        IPK: 3.77
+      },
+      {
+        id: 30,
+        name: 'Natalia',
+        nim: 17317119,
+        jnsKelamin: 'P',
+        alamat: 'Amsterdam',
+        namaBapak: "Johannes",
+        namaIbu: "Kelly",
+        jurusan: "teknologi informasi",
+        prodi: "manajemen informatika",
+        IPK: 3.86
       }
     ];
     return { students };
